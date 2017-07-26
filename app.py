@@ -15,7 +15,7 @@ MIN_PAGE_NAME_LENGTH = 2
 def add_monitoring():
     rollbar.init(os.environ.get('ROLLBAR_SECRET'))
     ## delete the next line if you dont want this event anymore
-    rollbar.report_message('Rollbar is configured correctly')
+    # rollbar.report_message('Rollbar is configured correctly')
     got_request_exception.connect(rollbar.contrib.flask.report_exception, app)
 
 
